@@ -1,20 +1,33 @@
 //
 //  ViewController.swift
-//  Dicee-iOS13
-//
-//  Created by Angela Yu on 11/06/2019.
-//  Copyright © 2019 London App Brewery. All rights reserved.
-//
+//  Dice Roll
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var diceImageView1: UIImageView!
+    
+    @IBOutlet weak var diceImageView2: UIImageView!
+    
+    
+//  Array of Dice face Images using Image Literal
+    var diceImageArray = [ #imageLiteral(resourceName: "128px-Dice-1.svg"), #imageLiteral(resourceName: "128px-Dice-2.svg"), #imageLiteral(resourceName: "128px-Dice-3.svg"), #imageLiteral(resourceName: "128px-Dice-4.svg"), #imageLiteral(resourceName: "128px-Dice-5.svg"), #imageLiteral(resourceName: "128px-Dice-6a.svg") ]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        
+//      Choosing a random Image from the array everytime btn is pressed
+        diceImageView1.image = diceImageArray.randomElement()
+        diceImageView2.image = diceImageArray.randomElement()
+        
+    }
+    
 }
 
